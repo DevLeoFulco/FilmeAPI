@@ -2,16 +2,15 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace FilmeAPI.Data
+namespace FilmeAPI.Data;
+
+public class FilmesContext : DbContext
+
 {
-    public class FilmesContext : DbContext
-
+    public FilmesContext(DbContextOptions<FilmesContext> opts) : base(opts)
     {
-        public FilmesContext(DbContextOptions<FilmesContext> opts) : base(opts)
-        {
-            
-        }
-
-        public DbSet<Filme> Filmes { get; set; }
+        
     }
+
+    public DbSet<Filme> Filmes { get; set; }
 }
