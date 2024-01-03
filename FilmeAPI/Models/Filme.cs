@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace FilmeAPI.Models;
 
 public class Filme
-{   
-    
+{
+    [Key]
+    [Required]
     public int Id { get; set; }
     [Required (ErrorMessage ="O título é obrigatorio")]
     public string Titulo { get; set; }
